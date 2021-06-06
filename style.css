@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background: url('image/aurora.jpg');
+    background: url('image/bg1.jpg');
     background-size: cover;
     font-family: sans-serif;
 
@@ -269,9 +269,9 @@ button {
   color: #fff;
     position: absolute;
     top: 50%;
-    left: 35.5%;
-    width: 900px;
-    height: 420px;
+    left: 29.5%;
+    width: 78%;
+    height: 75%;
     padding: 50px;
     border-radius: 10px;
     box-sizing: border-box;
@@ -284,11 +284,16 @@ button {
     
 }
 #popupclose {
+    border: solid red;
+    background: red;
+    border-radius: 10px;
+    font-weight: bold;
     float: right;
-    padding: 10px;
+    padding: 5px;
     cursor: pointer;
 }
 .popupcontent {
+  font-weight: bold;
     padding: 10px;
 }
 #button {
@@ -519,7 +524,6 @@ transform: scale(0);
 transition: all .5s ease-in-out;
 }
 #popup[data-pop="pop-swirl"].show {
--webkit-animation: pop-swirl 1s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
 visibility: visible;
 z-index: 200;
 opacity: 1;
@@ -533,7 +537,6 @@ z-index: 100;
 transition: all .5s ease-in-out;
 }
 #popup[data-pop="anvil"].show {
--webkit-animation: anvil 1s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
 visibility: visible;
 z-index: 200;
 opacity: 1;
@@ -542,4 +545,53 @@ opacity: 1;
 opacity: 1;
 visibility: visible;
 z-index: 100;
+}
+
+.copy {
+  position: relative;
+  display: inline-block;
+}
+
+.copy .copytext {
+  visibility: hidden;
+  width: 140px;
+  background-color: rgb(38, 0, 255);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.copy .copytext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgb(38, 0, 255) transparent transparent transparent;
+}
+
+.copy:hover .copytext {
+  visibility: visible;
+  opacity: 1;
+}
+.btncopy{
+  background: #0e7b11;
+    border: solid #0e7b11;
+    color: white;
+    border-radius: 5px;
+    margin-left: 25px;
+}
+
+.content-input{
+  margin-top: 30px;
 }

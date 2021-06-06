@@ -18,7 +18,7 @@
         <h2>Selamat Datang di ShortLink &nbsp;</h2>
       </div>
         <form>
-            <p style="color: white;"> Masukkan Link Anda </p>
+            <p style="color: white; font-weight: bold;"> Tempelkan link yang ingin Anda perpendek <img src="../Example/image/cut.png" style="width: 3%;"></p>
             <input type="text" name="" placeholder="Masukkan Link" id="textinput">
             <button type="button" aria-label='Thanks' class='h-button centered bubbly-button' data-text=' Buat Link ' id="btnshort">
                 <span>S</span>
@@ -36,10 +36,23 @@
           
       <div data-pop="pop-in" id="popup">
         <div class="popupcontrols">
-            <span id="popupclose">&times;</span>
+            <span id="popupclose">Close</span>
         </div>
         <div class="popupcontent">
-            <h1>Ini nanti jadi konten</h1>
+            <h1>Link anda sudah dibuat !</h1>
+          <div class="content-input">
+            <progress value="0" max="10" id="progressBar"></progress><br>
+            <input type="text" value="Tunggu Link Anda disini !" id="myInput" style="width: 50%;">
+            
+
+            <div class="copy">
+            <button type="button" class="btncopy" onclick="myFunction()" onmouseout="outFunc()">
+              <span class="copytext" id="myTooltip">Copy to clipboard</span>
+              Copy text
+              </button>
+            </div>
+          </div>
+           
         </div>
       </div>
 

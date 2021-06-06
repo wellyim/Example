@@ -26,7 +26,8 @@ var animateButton = function(e) {
         document.getElementById('textinput').value)
         .then(Response => Response.json()).then(
               data => {
-                 console.log(data)
+                document.getElementById("myInput").value = data.result.short_link
+                 console.log(data.result.short_link)
               }
           )
       }
@@ -49,4 +50,30 @@ var animateButton = function(e) {
       button.onclick = function() {
           overlay.className = 'show';
           popup.className = 'show';
+
+        var timeleft = 10;
+        var downloadTimer = setInterval(function(){
+          if(timeleft <= 0){
+            clearInterval(downloadTimer);
+          }
+          document.getElementById("progressBar").value = 10 - timeleft;
+          timeleft -= 1;
+        }, 1000);
       }
+
+      function myFunction() {
+        var copyText = document.getElementById("myInput");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "Copied: " + copyText.value;
+      }
+      
+      function outFunc() {
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "Copy to clipboard";
+      }
+
+      
